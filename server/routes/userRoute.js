@@ -3,11 +3,9 @@ const { loginUser, registerUser, getUserProfile } = require('../controllers/user
 
 const userRouter = express.Router();
 
-userRouter.post("/register",registerUser);    //localhost:9000/api/user/register
-
-userRouter.post("/login",loginUser);         //localhost:9000/api/user/login
-
-userRouter.get("/profile", getUserProfile); // localhost:9000/api/user/profile
+userRouter.post("/register",registerUser);  
+userRouter.post("/login",loginUser);        
+userRouter.get("/profile", getUserProfile); 
 
 
 module.exports = userRouter;
