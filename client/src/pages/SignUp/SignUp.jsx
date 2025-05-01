@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SignUp.css';
+const apiUrl = import.meta.env.VITE_API_URL;
+
 
 const Signup = ({ setIsLoggedIn }) => {
   const [formData, setFormData] = useState({
@@ -21,7 +23,7 @@ const Signup = ({ setIsLoggedIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:9090/api/user/register', {
+      const response = await fetch(`${apiUrl}/api/user/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'token1': "fhfhhhh" },
         body: JSON.stringify(formData)
